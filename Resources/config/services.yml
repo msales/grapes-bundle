@@ -1,0 +1,18 @@
+parameters:
+
+    grapes.service_provider.class: Msales\GrapesBundle\Provider\ServiceProvider
+    grapes.service_group_provider.class: Msales\GrapesBundle\Provider\ServiceGroupProvider
+
+services:
+
+    grapes.service_provider:
+        abstract: true
+        class: '%grapes.service_provider.class%'
+        calls:
+            - [setContainer, ['@service_container'] ]
+
+    grapes.service_group_provider:
+        abstract: true
+        class: '%grapes.service_group_provider.class%'
+        calls:
+            - [setContainer, ['@service_container'] ]

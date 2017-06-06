@@ -1,0 +1,22 @@
+{
+    "name": "msales/grapes-bundle",
+    "type": "symfony-bundle",
+    "description": "",
+    "license": "MIT",
+    "prefer-stable": true,
+    "keywords": ["Symfony2", "bundle"],
+    "homepage": "https://github.com/msales/grapes-bundle",
+    "autoload": {
+        "psr-4": {"Msales\\GrapesBundle\\": "/"}
+    },
+    "require": {
+        "php": ">=5.5.0",
+        "symfony/framework-bundle": "~2.8|^3.0",
+        "symfony/config": "2.8.*|^3.0",
+        "symfony/dependency-injection": "2.8.*|^3.0",
+        "symfony/http-kernel": "2.8.*|^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.6"
+    }
+}
