@@ -1,9 +1,9 @@
 <?php
 namespace Msales\GrapesBundle\Exception;
 
-use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
+use Exception;
 
-class AliasNotRegisteredException extends ServiceNotFoundException
+class AliasNotRegisteredException extends Exception
 {
 
 }
