@@ -80,13 +80,13 @@ class ServiceProviderDefinitionTest extends BaseTestCase
 
     private function mockWrappedServiceProviderDefinition()
     {
-        $wrappedServiceProviderDefinition = Mockery::mock(Definition::class);
+        $definition = Mockery::mock(Definition::class);
 
-        $wrappedServiceProviderDefinition
+        $definition
             ->shouldReceive('addMethodCall')
             ->andReturn($this->passThroughValue)
         ;
 
-        return $wrappedServiceProviderDefinition;
+        return $definition;
     }
 }

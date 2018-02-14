@@ -12,6 +12,8 @@ use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 
 class ServiceGroupProviderTest extends BaseTestCase
 {
+    const SERVICE_ID = 'serviceID';
+
     /** @var ContainerInterface|MockInterface */
     private $serviceContainer;
 
@@ -72,40 +74,40 @@ class ServiceGroupProviderTest extends BaseTestCase
         $servicesToBeRegisteredWithoutDefault = [
             'groupsWithoutDefault' => [
                 [
-                    'groupAlias'  => 'group1',
-                    'serviceID'   => 'taggedServiceID1',
-                    'default'     => false,
-                    'serviceMock' => $service1,
+                    'groupAlias'     => 'group1',
+                    self::SERVICE_ID => 'taggedServiceID1',
+                    'default'        => false,
+                    'serviceMock'    => $service1,
                 ],
                 [
-                    'groupAlias'  => 'group1',
-                    'serviceID'   => 'taggedServiceID2',
-                    'default'     => false,
-                    'serviceMock' => $service2,
+                    'groupAlias'     => 'group1',
+                    self::SERVICE_ID => 'taggedServiceID2',
+                    'default'        => false,
+                    'serviceMock'    => $service2,
                 ],
                 [
-                    'groupAlias'  => 'group1',
-                    'serviceID'   => 'taggedServiceID3',
-                    'default'     => false,
-                    'serviceMock' => $service3,
+                    'groupAlias'     => 'group1',
+                    self::SERVICE_ID => 'taggedServiceID3',
+                    'default'        => false,
+                    'serviceMock'    => $service3,
                 ],
                 [
-                    'groupAlias'  => 'group2',
-                    'serviceID'   => 'taggedServiceID4',
-                    'default'     => false,
-                    'serviceMock' => $service4,
+                    'groupAlias'     => 'group2',
+                    self::SERVICE_ID => 'taggedServiceID4',
+                    'default'        => false,
+                    'serviceMock'    => $service4,
                 ],
                 [
-                    'groupAlias'  => 'group2',
-                    'serviceID'   => 'taggedServiceID5',
-                    'default'     => false,
-                    'serviceMock' => $service5,
+                    'groupAlias'     => 'group2',
+                    self::SERVICE_ID => 'taggedServiceID5',
+                    'default'        => false,
+                    'serviceMock'    => $service5,
                 ],
                 [
-                    'groupAlias'  => 'group2',
-                    'serviceID'   => 'taggedServiceID6',
-                    'default'     => false,
-                    'serviceMock' => $service6,
+                    'groupAlias'     => 'group2',
+                    self::SERVICE_ID => 'taggedServiceID6',
+                    'default'        => false,
+                    'serviceMock'    => $service6,
                 ],
             ],
         ];
@@ -130,40 +132,40 @@ class ServiceGroupProviderTest extends BaseTestCase
         $servicesToBeRegisteredWithDefault = [
             'groupsWithDefault' => [
                 [
-                    'groupAlias'  => 'group1',
-                    'serviceID'   => 'taggedServiceID1',
-                    'default'     => true,
-                    'serviceMock' => $service1,
+                    'groupAlias'     => 'group1',
+                    self::SERVICE_ID => 'taggedServiceID1',
+                    'default'        => true,
+                    'serviceMock'    => $service1,
                 ],
                 [
-                    'groupAlias'  => 'group1',
-                    'serviceID'   => 'taggedServiceID2',
-                    'default'     => true,
-                    'serviceMock' => $service2,
+                    'groupAlias'     => 'group1',
+                    self::SERVICE_ID => 'taggedServiceID2',
+                    'default'        => true,
+                    'serviceMock'    => $service2,
                 ],
                 [
-                    'groupAlias'  => 'group1',
-                    'serviceID'   => 'taggedServiceID3',
-                    'default'     => false,
-                    'serviceMock' => $service3,
+                    'groupAlias'     => 'group1',
+                    self::SERVICE_ID => 'taggedServiceID3',
+                    'default'        => false,
+                    'serviceMock'    => $service3,
                 ],
                 [
-                    'groupAlias'  => 'group2',
-                    'serviceID'   => 'taggedServiceID4',
-                    'default'     => true,
-                    'serviceMock' => $service4,
+                    'groupAlias'     => 'group2',
+                    self::SERVICE_ID => 'taggedServiceID4',
+                    'default'        => true,
+                    'serviceMock'    => $service4,
                 ],
                 [
-                    'groupAlias'  => 'group2',
-                    'serviceID'   => 'taggedServiceID5',
-                    'default'     => true,
-                    'serviceMock' => $service5,
+                    'groupAlias'     => 'group2',
+                    self::SERVICE_ID => 'taggedServiceID5',
+                    'default'        => true,
+                    'serviceMock'    => $service5,
                 ],
                 [
-                    'groupAlias'  => 'group2',
-                    'serviceID'   => 'taggedServiceID6',
-                    'default'     => false,
-                    'serviceMock' => $service6,
+                    'groupAlias'     => 'group2',
+                    self::SERVICE_ID => 'taggedServiceID6',
+                    'default'        => false,
+                    'serviceMock'    => $service6,
                 ],
             ],
         ];
@@ -194,40 +196,40 @@ class ServiceGroupProviderTest extends BaseTestCase
         $onlyDefaultService = [
             'groupsWithOnlyDefault' => [
                 [
-                    'groupAlias'  => 'group1',
-                    'serviceID'   => 'taggedServiceID1',
-                    'default'     => true,
-                    'serviceMock' => $service1,
+                    'groupAlias'     => 'group1',
+                    self::SERVICE_ID => 'taggedServiceID1',
+                    'default'        => true,
+                    'serviceMock'    => $service1,
                 ],
                 [
-                    'groupAlias'  => 'group1',
-                    'serviceID'   => 'taggedServiceID2',
-                    'default'     => true,
-                    'serviceMock' => $service2,
+                    'groupAlias'     => 'group1',
+                    self::SERVICE_ID => 'taggedServiceID2',
+                    'default'        => true,
+                    'serviceMock'    => $service2,
                 ],
                 [
-                    'groupAlias'  => 'group1',
-                    'serviceID'   => 'taggedServiceID3',
-                    'default'     => true,
-                    'serviceMock' => $service3,
+                    'groupAlias'     => 'group1',
+                    self::SERVICE_ID => 'taggedServiceID3',
+                    'default'        => true,
+                    'serviceMock'    => $service3,
                 ],
                 [
-                    'groupAlias'  => 'group2',
-                    'serviceID'   => 'taggedServiceID4',
-                    'default'     => true,
-                    'serviceMock' => $service4,
+                    'groupAlias'     => 'group2',
+                    self::SERVICE_ID => 'taggedServiceID4',
+                    'default'        => true,
+                    'serviceMock'    => $service4,
                 ],
                 [
-                    'groupAlias'  => 'group2',
-                    'serviceID'   => 'taggedServiceID5',
-                    'default'     => true,
-                    'serviceMock' => $service5,
+                    'groupAlias'     => 'group2',
+                    self::SERVICE_ID => 'taggedServiceID5',
+                    'default'        => true,
+                    'serviceMock'    => $service5,
                 ],
                 [
-                    'groupAlias'  => 'group2',
-                    'serviceID'   => 'taggedServiceID6',
-                    'default'     => true,
-                    'serviceMock' => $service6,
+                    'groupAlias'     => 'group2',
+                    self::SERVICE_ID => 'taggedServiceID6',
+                    'default'        => true,
+                    'serviceMock'    => $service6,
                 ],
             ],
         ];
@@ -344,7 +346,7 @@ class ServiceGroupProviderTest extends BaseTestCase
         foreach ($registrationArgs as $serviceArguments) {
             for ($i = 0; $i < count($serviceArguments); ++$i) {
                 $alias = $serviceArguments[$i]['groupAlias'];
-                $serviceID = $serviceArguments[$i]['serviceID'];
+                $serviceID = $serviceArguments[$i][self::SERVICE_ID];
                 $isDefault = $serviceArguments[$i]['default'];
                 $this->serviceGroupProvider->register($alias, $serviceID, $isDefault);
             }
@@ -362,7 +364,7 @@ class ServiceGroupProviderTest extends BaseTestCase
 
         foreach ($registrationArgs as $serviceArguments) {
             for ($i = 0; $i < count($serviceArguments); ++$i) {
-                $serviceId = $serviceArguments[$i]['serviceID'];
+                $serviceId = $serviceArguments[$i][self::SERVICE_ID];
                 $service = $serviceArguments[$i]['serviceMock'];
                 $serviceContainer->shouldReceive('get')->with($serviceId)->andReturn($service);
             }
